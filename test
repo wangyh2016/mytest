@@ -1,1 +1,4 @@
-
+echo '将本地Docker镜像推送到Harbor镜像仓库'
+docker tag iota_dev:dev2 172.31.19.240/streamnet-dag/iota_dev:dev2
+docker login 172.31.19.240 -u admin -p hzqy12345
+docker push 172.31.19.240/streamnet-dag/iota_dev:dev2
