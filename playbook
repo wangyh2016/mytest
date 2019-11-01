@@ -1,0 +1,33 @@
+---
+- hosts: stream-go
+  remote_user: trust
+  vars:
+    ports:
+      - web1:
+        port: 81
+        rootdir: /data/website1
+      - web2:
+        port: 82
+        name: web2.yh.con
+        rootdir: /data/website2        
+      - web3:
+        port: 83
+        name: web3.yh.con
+        rootdir: /data/website3        
+  tasks: 
+    - name: copy conf
+      template: src=for3.conf.j2 dest=/home/trust/for3.conf
+      
+      
+=================================
+for3.conf.j2
+
+{% for p in ports %}
+server{
+        listen {{ p.port }}
+{% if p.name is defined %}
+        servername {{ p.name }}
+{% endif %}
+        documentroot {{ p.rootdir }}
+}
+{% endfor %}
