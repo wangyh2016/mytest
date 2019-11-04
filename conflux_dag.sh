@@ -14,10 +14,10 @@ java -XX:NewSize=1024m -XX:OldSize=2048m  -jar iri-1.5.5.jar  --testnet \
                         --walk-validator "NULL" \
                         --ledger-validator "NULL" \
                         -p 14700 \
-			                  --udp-receiver-port 14600 \
-			                  --tcp-receiver-port 14600 \
-			                  --neighbors "tcp://172.31.18.190:14600" \
-			                   --neighbors "tcp://172.31.30.122:14600" \
+			--udp-receiver-port 14600 \
+			--tcp-receiver-port 14600 \
+			--neighbors "tcp://172.31.18.190:14600" \
+			--neighbors "tcp://172.31.30.122:14600" \
                         --max-peers 40 \
                         --remote \
                         --enable-streaming-graph \
@@ -26,6 +26,6 @@ java -XX:NewSize=1024m -XX:OldSize=2048m  -jar iri-1.5.5.jar  --testnet \
                         --ipfs-txns false \
                         --batch-txns false \
                         --weight-calculation-algorithm "IN_MEM" \
-			                   --ancestor-forward-enable true \
+			--ancestor-forward-enable true \
                         --ancestor-create-frequency 1000 \
                         &>  streamnet.log &
