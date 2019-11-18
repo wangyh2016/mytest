@@ -12,3 +12,20 @@
           path: /home/trust/file.txt
           state: directory 
         when: stat_result.stat.exists == False 
+
+
+
+=======================================================
+---
+- hosts: stream-go
+  remote_user: trust 
+
+  tasks:
+    - name: create directory
+      file: 
+        path={{item}}
+        state=directory 
+      with_items: 
+        - /home/trust/stream_iota
+        - /home/trust/stream_iota/data
+        - /home/trust/stream_iota/conf
