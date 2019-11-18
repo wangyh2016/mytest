@@ -43,6 +43,9 @@ sudo vi /etc/docker/daemon.json
 保存后，重启docker服务
 sudo systemctl daemon-reload
 sudo systemctl restart docker
+#如果用snap安装的docker 
+sudo vi /var/snap/docker/current/config/daemon.json
+sudo snap restart docker
 ```  
 先在刚刚的harbor页面先手动创建一个公开的runtime项目，等下我们就把镜像传到该项目下
 ![](https://github.com/wangyh2016/storm/blob/master/runtime.png?raw=true)  
