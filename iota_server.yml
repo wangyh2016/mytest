@@ -1,0 +1,19 @@
+---
+- hosts: stream-go
+  remote_user: trust 
+
+  tasks:
+    - name: create directory
+      file: 
+        path={{item}}
+        state=directory 
+      with_items: 
+        - /home/trust/stream_iota
+        - /home/trust/stream_iota/data
+        - /home/trust/stream_iota/conf
+    - name: copy neighbors
+      copy: src=/home/trust/ansible/neighbors dest=/home/trust/stream_iota/conf/neighbors
+    - name: pull image from harbor
+      shell: sudo docker pull 172.31.19.240/streamnet-dag/{{ image_name }}:{{ image_tag }}
+    - name: start docker
+      shell: sudo docker run -d -p 14700:14700 -p 13700:13700 --name stream_iota -v /home/trust/stream_iota/data:/iri/data/ -v /home/trust/stream_iota/conf/neighbors:/iri/conf/neighbors 172.31.19.240/streamnet-dag/{{ image_name }}:{{ image_tag }} /entrypoint.sh
