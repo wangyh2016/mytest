@@ -25,3 +25,7 @@ sudo docker build -t ${image_name}:${image_tag} .
 sudo docker tag ${image_name}:${image_tag} 172.31.19.240/streamnet-dag/${image_name}:${image_tag}
 sudo docker login 172.31.19.240 -u admin -p hzqy12345
 sudo docker push 172.31.19.240/streamnet-dag/${image_name}:${image_tag}
+
+
+=====================
+ansible_ssh_user
