@@ -1,0 +1,19 @@
+streamnet-go.service
+
+/usr/local/bin/stream-go
+vi /lib/systemd/system/stream-go.service
+[Unit]
+Description=stream-go
+After=network.target remote-fs.target nss-lookup.target
+
+[Service]
+Type=simple
+TimeoutSec=0
+IgnoreSIGPIPE=no
+GuessMainPID=no
+KillMode=process
+ExecStart=/usr/local/bin/stream-go  -host http://127.0.0.1:14700
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
