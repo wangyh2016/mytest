@@ -35,7 +35,7 @@ Tiller Server是一个部署在Kubernetes集群内部的 server，其与 Helm cl
 
 
 ## 安装 ##
-打开"https://github.com/helm/helm/releases"根据对应的操作系统下载stable版本，解压后将可执行文件helm拷贝到/usr/bin目录下即可，这样Helm客户端就在这台机器上安装完成了。
+打开[helm](https://github.com/helm/helm/releases)根据对应的操作系统下载stable版本，解压后将可执行文件helm拷贝到/usr/bin目录下即可，这样Helm客户端就在这台机器上安装完成了。
 安装tiller
 ```bash
 helm init --upgrade --tiller-image cnych/tiller:XXXX --stable-repo-url https://cnych.github.io/kube-charts-mirror/ 
@@ -62,5 +62,4 @@ helm init --upgrade --tiller-image cnych/tiller:XXXX --stable-repo-url https://c
 ```bash
 helm package hello-helm
 ```  
-
 
