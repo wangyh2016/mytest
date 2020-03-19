@@ -35,7 +35,7 @@ Tiller Server是一个部署在Kubernetes集群内部的 server，其与 Helm cl
 
 
 ## 安装 ##
-打开https://github.com/helm/helm/releases根据对应的操作系统下载stable版本，解压后将可执行文件helm拷贝到/usr/bin目录下即可，这样Helm客户端就在这台机器上安装完成了。
+打开"https://github.com/helm/helm/releases"根据对应的操作系统下载stable版本，解压后将可执行文件helm拷贝到/usr/bin目录下即可，这样Helm客户端就在这台机器上安装完成了。
 安装tiller
 ```bash
 helm init --upgrade --tiller-image cnych/tiller:XXXX --stable-repo-url https://cnych.github.io/kube-charts-mirror/ 
@@ -53,7 +53,7 @@ helm init --upgrade --tiller-image cnych/tiller:XXXX --stable-repo-url https://c
 现在尝试安装下这个 Chart :
 ![](https://github.com/wangyh2016/mytest/blob/master/images/hello-install.png?raw=true)
 ![](https://github.com/wangyh2016/mytest/blob/master/images/svc-pods.png?raw=true)
-等到 Pod 创建完成后，我们可以根据创建的 Service 的 NodePort 来访问该服务了，然后在浏览器中打开http://k8s.haimaxy.com:31236就可以正常的访问刚刚部署的 nginx 应用了。
+等到 Pod 创建完成后，我们可以根据创建的 Service 的 NodePort 来访问该服务了，然后在浏览器中打开"http://ipaddress:32355" 就可以正常的访问刚刚部署的 nginx 应用了。
 ![](https://github.com/wangyh2016/mytest/blob/master/images/result.png?raw=true)
 
 查看release: 
