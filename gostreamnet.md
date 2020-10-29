@@ -46,7 +46,7 @@ cd go-streamnet
 go build .
 ```
 
-This will generate a binary  file go-streamnet
+This will generate a binary  file go-streamnet  
  __The binary's name is '**go-streamnet**', which is standing for Go-StreamNet.__
 
 #### MacOS
@@ -71,11 +71,11 @@ cd go-streamnet
 ```bash
 go build .
 ```
-This will generate a binary  file go-streamnet
+This will generate a binary  file go-streamnet  
 __The binary's name is '**go-streamnet**', which is standing for Go-StreamNet.__
 
 ## Run
-- Start on the same intranet segment
+- Start on the same intranet segment  
    One of the nodes run
     ```bash
     ./go-streamnet
@@ -85,7 +85,7 @@ __The binary's name is '**go-streamnet**', which is standing for Go-StreamNet.__
     ./go-streamnet -d /ip4/ipaddress/tcp/port/p2p/peerid
     ```
     ipaddresss is the first run  nodes's intranet ipaddress,port and peerid is Automatically generated in the first node run.
-- Start by relay
+- Start by relay  
     One of the nodes run
     ```bash
     cd scripts/relay
